@@ -1,0 +1,154 @@
+/* GLOBAL */
+body {
+  background: url("/images/sand-bg.png") repeat;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #222;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+/* QUICKLINKS */
+.quicklinks-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.6rem;
+  background: rgba(255,255,255,0.6);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.quicklink {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* HERO VIDEO */
+.hero {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+.hero-content {
+  position: relative; z-index: 10;
+  text-align: center; color: white;
+  top: 50%; transform: translateY(-50%);
+}
+
+/* CTA – Rustrød */
+.btn-primary {
+  background: #C45832;
+  color: #fff !important;
+  padding: 0.9rem 1.8rem;
+  border-radius: 40px;
+  display: inline-block;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: #A64524;
+}
+
+/* CTA – Oker */
+.btn-oker {
+  background: #D89A2B;
+  color: #fff !important;
+  padding: 0.9rem 1.8rem;
+  border-radius: 40px;
+  display: inline-block;
+  font-weight: 600;
+}
+.btn-oker:hover {
+  background: #B8791A;
+}
+
+/* MOSEGRØNN SEKSJON */
+.section-green {
+  background: #324C3A;
+  color: #F7F4EC;
+  padding: 4rem 0;
+  text-align: center;
+}
+.section-green h2 {
+  margin-bottom: 1rem;
+}
+
+/* SANDBAKGRUNN + BILDE */
+.section-sand {
+  display: flex;
+  flex-wrap: wrap;
+  background: url("/images/sand-bg.png") repeat;
+}
+.section-image {
+  flex: 1 1 50%;
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+.section-content {
+  flex: 1 1 50%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* NJFF-STIL KATEGORIER */
+.categories {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+}
+.category-box {
+  background: rgba(255,255,255,0.75);
+  padding: 2.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.08);
+  transition: 0.2s;
+}
+.category-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* PARTNERS */
+.partners {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.partner-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.partner-grid img {
+  height: 70px;
+  opacity: 0.85;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .section-sand { flex-direction: column; }
+  .section-image { height: 220px; }
+  .section-content { padding: 2rem 1.5rem; }
+  .hero { height: 55vh; }
+}

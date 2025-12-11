@@ -1,9 +1,20 @@
-/* GLOBAL */
-body {
-  background: url("images/sand-bg.png") repeat;
+/* ---------- RESET ---------- */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  background: #f5f1e9 url("images/sand-bg.png") repeat; /* sandbakgrunn + fallback */
   font-family: system-ui, sans-serif;
   color: #222;
+  line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -11,43 +22,64 @@ body {
   margin: 0 auto;
 }
 
-/* QUICKLINKS */
+/* ---------- QUICKLINKS ---------- */
 .quicklinks-wrapper {
   display: flex;
   justify-content: space-evenly;
   padding: 0.6rem;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.65);
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
+
 .quicklink {
   font-weight: 600;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: 0.15s ease;
 }
 
-/* HERO VIDEO */
+.quicklink:hover {
+  opacity: 0.7;
+}
+
+/* ---------- HERO VIDEO ---------- */
 .hero {
   position: relative;
   height: 70vh;
   overflow: hidden;
 }
+
 .hero-video {
   position: absolute;
-  top: 50%; left: 50%;
-  width: 100%; height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center 30%; /* viktig for hundehode */
   transform: translate(-50%, -50%);
 }
+
 .hero-overlay {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,0.25);
-}
-.hero-content {
-  position: relative; z-index: 10;
-  text-align: center; color: white;
-  top: 50%; transform: translateY(-50%);
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.28);
 }
 
-/* CTA – Rustrød */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* ---------- CTA – Rustrød ---------- */
 .btn-primary {
   background: #C45832;
   color: #fff !important;
@@ -55,12 +87,16 @@ body {
   border-radius: 40px;
   display: inline-block;
   font-weight: 600;
-}
-.btn-primary:hover {
-  background: #A64524;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
-/* CTA – Oker */
+.btn-primary:hover {
+  background: #A64524;
+  transform: translateY(-2px);
+}
+
+/* ---------- CTA – Oker ---------- */
 .btn-oker {
   background: #D89A2B;
   color: #fff !important;
@@ -68,34 +104,42 @@ body {
   border-radius: 40px;
   display: inline-block;
   font-weight: 600;
-}
-.btn-oker:hover {
-  background: #B8791A;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
-/* MOSEGRØNN SEKSJON */
+.btn-oker:hover {
+  background: #B8791A;
+  transform: translateY(-2px);
+}
+
+/* ---------- MOSEGRØNN SEKSJON ---------- */
 .section-green {
   background: #324C3A;
   color: #F7F4EC;
   padding: 4rem 0;
   text-align: center;
 }
+
 .section-green h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-/* SANDBAKGRUNN + BILDE */
+/* ---------- SANDBAKGRUNN + BILDE ---------- */
 .section-sand {
   display: flex;
   flex-wrap: wrap;
-  background: url("images/sand-bg.png") repeat;
+  background: #f5f1e9 url("images/sand-bg.png") repeat;
 }
+
 .section-image {
   flex: 1 1 50%;
-  min-height: 280px;
+  min-height: 300px;
   background-size: cover;
   background-position: center;
 }
+
 .section-content {
   flex: 1 1 50%;
   padding: 3rem;
@@ -104,51 +148,67 @@ body {
   justify-content: center;
 }
 
-/* NJFF-STIL KATEGORIER */
+/* ---------- CATEGORIES – NJFF-STIL ---------- */
 .categories {
   padding: 3rem 1rem;
   text-align: center;
 }
+
+.categories h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  gap: 1.2rem;
   padding: 2rem 0;
 }
+
 .category-box {
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.85);
   padding: 2.5rem 1rem;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
   border: 1px solid rgba(0,0,0,0.08);
-  transition: 0.2s;
+  transition: 0.2s ease;
+  backdrop-filter: blur(3px);
 }
+
 .category-box:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
 
-/* PARTNERS */
+/* ---------- PARTNERS ---------- */
 .partners {
   padding: 3rem 1rem;
   text-align: center;
 }
+
 .partner-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
 }
+
 .partner-grid img {
   height: 70px;
   opacity: 0.85;
 }
 
-/* RESPONSIVE */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
   .section-sand { flex-direction: column; }
   .section-image { height: 220px; }
   .section-content { padding: 2rem 1.5rem; }
   .hero { height: 55vh; }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 { font-size: 1.7rem; }
+  .btn-primary, .btn-oker { padding: 0.7rem 1.4rem; }
 }

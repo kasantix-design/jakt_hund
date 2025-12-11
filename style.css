@@ -1,6 +1,6 @@
 /* GLOBAL */
 body {
-  background: url("/images/sand-bg.png") repeat;
+  background: url("images/sand-bg.png") repeat;
   margin: 0;
   font-family: system-ui, sans-serif;
   color: #222;
@@ -88,7 +88,7 @@ body {
 .section-sand {
   display: flex;
   flex-wrap: wrap;
-  background: url("/images/sand-bg.png") repeat;
+  background: url("images/sand-bg.png") repeat;
 }
 .section-image {
   flex: 1 1 50%;
